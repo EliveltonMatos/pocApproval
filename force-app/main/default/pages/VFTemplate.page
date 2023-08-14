@@ -1,0 +1,19 @@
+<apex:page controller="MassApprovalController">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>MassApproval</title>
+        <apex:slds />
+      </head>
+    <apex:form>
+        <apex:pageBlock title="Records to be updated">
+            <apex:pageBlockTable value="{!records}" var="record">
+                <apex:column value="{!record.Name}" />
+                <apex:column value="{!record.CustomField__c}" />
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!sendEmails}" value="Send Emails and Start Mass Approval"/>
+            </apex:pageBlockButtons>            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
